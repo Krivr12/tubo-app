@@ -1,0 +1,15 @@
+meta {
+  name: Get Invoice By ID
+  type: http
+  seq: 7
+}
+
+get {
+  url: {{baseUrl}}/api/invoices/11876973-e6fd-4d0a-85df-99b80c4b4b3b
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
