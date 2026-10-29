@@ -1,4 +1,10 @@
-const API_BASE = 'http://localhost:4000/api';
+/// <reference types="vite/client" />
+
+const API_BASE: string = import.meta.env.VITE_API_URL;
+
+if (!API_BASE) {
+  throw new Error('VITE_API_URL is not set. Copy frontend/.env.example to frontend/.env.');
+}
 
 async function request(endpoint: string, options: RequestInit = {}) {
   const token = localStorage.getItem('tubo_token');
